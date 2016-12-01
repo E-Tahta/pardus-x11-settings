@@ -1,0 +1,14 @@
+Source: pardus-x11-settings
+Section: utils
+Priority: standard
+Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: http://www.pardus.org.tr
+
+Package: pardus-x11-settings
+Architecture: all
+Depends: ${misc:Depends}, x11-common
+Description: Sets X11 related files for Pardus
+ Utility package that sets XDG_CONFIG_DIRS env var
+ under /etc/X11/Xsession.d.

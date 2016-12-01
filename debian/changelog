@@ -1,0 +1,11 @@
+pardus-x11-settings (2016.2) pardus; urgency=medium
+
+  * Update dependencies
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 01 Dec 2016 15:30:11 +0300
+
+pardus-x11-settings (2016.1) pardus; urgency=medium
+
+  * Initial release.
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 01 Dec 2016 13:47:47 +0300
