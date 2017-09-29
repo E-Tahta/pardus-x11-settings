@@ -3,7 +3,7 @@ Section: utils
 Priority: standard
 Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.8
+Standards-Version: 3.9.6
 Homepage: http://www.pardus.org.tr
 
 Package: pardus-x11-settings
