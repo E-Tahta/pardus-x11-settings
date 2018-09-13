@@ -1,12 +1,12 @@
 build:
   package:
-    image: pardus/pardus-devel
+    image: etap
     volumes:
-      - /tmp/packages:/packages
+      - /packages/etap:/packages
     commands:
-      - echo "TODO lintian -i /packages/$(basename $DRONE_REPO)/*.changes"
+      - id
       - apt-get update
-      - apt-get install --no-install-recommends dpkg-dev devscripts equivs
+      - apt-get install build-essential equivs devscripts
       - mkdir -p build-area
       - cd build-area
       - dpkg-source -x /packages/$(basename $DRONE_REPO)/*.dsc build-$(basename $DRONE_REPO)
@@ -14,6 +14,16 @@ build:
       - mk-build-deps -i -r
       - dpkg-buildpackage -b -uc
       - cd ..
-      - cp  -vt /packages/$(basename $DRONE_REPO) debian-installer-images_* *.udeb *.deb *.changes 2>/dev/null || true
+      - cp  -vt /packages/$(basename $DRONE_REPO) *.udeb *.deb *.changes 2>/dev/null || true
+  test:
+    image: etap
+    volumes:
+      - /packages/etap:/packages
+    commands:
+      - id
+      - apt-get update
+      - dpkg -i /packages/$(basename $DRONE_REPO)/*.deb || apt-get install -f
+      - dpkg -i /packages/$(basename $DRONE_REPO)/*.deb
+      - echo "DONE"
 branches:
   - master
